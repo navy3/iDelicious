@@ -9,7 +9,8 @@
 #import "DEHomeViewController.h"
 #import "DEBundleViewController.h"
 #import "DETagListViewController.h"
-#import "DEStatViewController.h"
+#import "FGLoginViewController.h"
+#import "DEAccount.h"
 
 @interface DEHomeViewController ()
 
@@ -52,11 +53,27 @@
 {
     [super viewDidLoad];
 
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.20f green:0.45f blue:0.82f alpha:1.00f];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if (![[DEAccount name] length] || ![[DEAccount password] length]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"please set your delicious account when you first use this application" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        [alert release];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == alertView.cancelButtonIndex) {
+        FGLoginViewController *login = [[FGLoginViewController alloc] init];
+        [self.navigationController pushViewController:login animated:YES];
+        [login release];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,13 +94,13 @@
         return @"Bundles";
     else if (3 == section)
         return @"Tags";
-    return @"Stat.";
+    return @"Account";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -117,7 +134,7 @@
         cell.textLabel.text = @"All Tags";
     }
     else {
-        cell.textLabel.text = @"Statistical";
+        cell.textLabel.text = @"Account";
     }
     
     return cell;
@@ -200,9 +217,9 @@
         [self.navigationController pushViewController:self.tagViewController animated:YES];
     }
     else {
-        DEStatViewController *stat = [[DEStatViewController alloc] init];
-        [self.navigationController pushViewController:stat animated:YES];
-        [stat release];
+        FGLoginViewController *login = [[FGLoginViewController alloc] init];
+        [self.navigationController pushViewController:login animated:YES];
+        [login release];
     }
 }
 

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DEPostListViewController.h"
 
-@interface DEHomeViewController : UITableViewController
+@interface DEHomeViewController : UITableViewController<UIAlertViewDelegate>
 
 @end
