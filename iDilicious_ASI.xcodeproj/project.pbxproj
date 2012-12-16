@@ -32,6 +32,8 @@
 		551324E41667DE24005B7BAA /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 551324DB1667DE24005B7BAA /* whiteArrow.png */; };
 		551324E51667DE24005B7BAA /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 551324DC1667DE24005B7BAA /* whiteArrow@2x.png */; };
 		551324E71667E06D005B7BAA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551324E61667E06D005B7BAA /* QuartzCore.framework */; };
+		55167F59167DA22D00033CA7 /* FGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55167F57167DA22D00033CA7 /* FGLoginViewController.m */; };
+		55167F5A167DA22D00033CA7 /* FGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55167F58167DA22D00033CA7 /* FGLoginViewController.xib */; };
 		55263A361668F5B900E808CC /* DEUserHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 55263A351668F5B900E808CC /* DEUserHelper.m */; };
 		55263A401669171F00E808CC /* DEParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 55263A3F1669171F00E808CC /* DEParser.m */; };
 		55D968CC165BCA0F00180C15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D968CB165BCA0F00180C15 /* UIKit.framework */; };
@@ -69,7 +71,6 @@
 		55E709E2165D110200D50990 /* DETag.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E709E1165D110200D50990 /* DETag.m */; };
 		55E709E8165D1A6600D50990 /* DEPostListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E709E7165D1A6600D50990 /* DEPostListViewController.m */; };
 		55F3719E166E3461005E9D51 /* DEStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3719D166E3461005E9D51 /* DEStatViewController.m */; };
-		55F371A8166E55D7005E9D51 /* DEServiceAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F371A7166E55D6005E9D51 /* DEServiceAPI.m */; };
 		55FF0BB51677A30F00F8F0B0 /* NSDate+Nibware.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF0BAA1677A30F00F8F0B0 /* NSDate+Nibware.m */; };
 		55FF0BB61677A30F00F8F0B0 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF0BAC1677A30F00F8F0B0 /* NSDictionary+Extensions.m */; };
 		55FF0BB71677A30F00F8F0B0 /* NSMutableArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF0BAE1677A30F00F8F0B0 /* NSMutableArray+Extensions.m */; };
@@ -141,6 +142,9 @@
 		551324DB1667DE24005B7BAA /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		551324DC1667DE24005B7BAA /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		551324E61667E06D005B7BAA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		55167F56167DA22D00033CA7 /* FGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLoginViewController.h; sourceTree = "<group>"; };
+		55167F57167DA22D00033CA7 /* FGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLoginViewController.m; sourceTree = "<group>"; };
+		55167F58167DA22D00033CA7 /* FGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FGLoginViewController.xib; sourceTree = "<group>"; };
 		55263A341668F5B900E808CC /* DEUserHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEUserHelper.h; sourceTree = "<group>"; };
 		55263A351668F5B900E808CC /* DEUserHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEUserHelper.m; sourceTree = "<group>"; };
 		55263A3E1669171F00E808CC /* DEParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEParser.h; sourceTree = "<group>"; };
@@ -210,8 +214,6 @@
 		55E709E7165D1A6600D50990 /* DEPostListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEPostListViewController.m; sourceTree = "<group>"; };
 		55F3719C166E3461005E9D51 /* DEStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEStatViewController.h; sourceTree = "<group>"; };
 		55F3719D166E3461005E9D51 /* DEStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEStatViewController.m; sourceTree = "<group>"; };
-		55F371A6166E55D5005E9D51 /* DEServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEServiceAPI.h; sourceTree = "<group>"; };
-		55F371A7166E55D6005E9D51 /* DEServiceAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEServiceAPI.m; sourceTree = "<group>"; };
 		55FF0BA91677A30F00F8F0B0 /* NSDate+Nibware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Nibware.h"; sourceTree = "<group>"; };
 		55FF0BAA1677A30F00F8F0B0 /* NSDate+Nibware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Nibware.m"; sourceTree = "<group>"; };
 		55FF0BAB1677A30F00F8F0B0 /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extensions.h"; sourceTree = "<group>"; };
@@ -295,8 +297,6 @@
 				55E709E1165D110200D50990 /* DETag.m */,
 				551324AE1667AC8E005B7BAA /* DEBundle.h */,
 				551324AF1667AC8E005B7BAA /* DEBundle.m */,
-				55263A341668F5B900E808CC /* DEUserHelper.h */,
-				55263A351668F5B900E808CC /* DEUserHelper.m */,
 				5503223F166C7F8B00354544 /* DEStat.h */,
 				55032240166C7F8B00354544 /* DEStat.m */,
 			);
@@ -345,6 +345,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		55167F54167DA1D700033CA7 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				551324B51667C33F005B7BAA /* DETagListViewController.h */,
+				551324B61667C340005B7BAA /* DETagListViewController.m */,
+			);
+			name = Tag;
+			sourceTree = "<group>";
+		};
+		55167F55167DA20600033CA7 /* Stat */ = {
+			isa = PBXGroup;
+			children = (
+				55F3719C166E3461005E9D51 /* DEStatViewController.h */,
+				55F3719D166E3461005E9D51 /* DEStatViewController.m */,
+			);
+			name = Stat;
+			sourceTree = "<group>";
+		};
 		55D968BC165BCA0F00180C15 = {
 			isa = PBXGroup;
 			children = (
@@ -385,26 +403,25 @@
 		55D968D1165BCA0F00180C15 /* iDilicious_ASI */ = {
 			isa = PBXGroup;
 			children = (
+				55D968DA165BCA0F00180C15 /* AppDelegate.h */,
+				55D968DB165BCA0F00180C15 /* AppDelegate.m */,
+				551324C41667D27A005B7BAA /* GTTextFieldViewController.h */,
+				551324C51667D27A005B7BAA /* GTTextFieldViewController.m */,
+				55167F56167DA22D00033CA7 /* FGLoginViewController.h */,
+				55167F57167DA22D00033CA7 /* FGLoginViewController.m */,
+				55167F58167DA22D00033CA7 /* FGLoginViewController.xib */,
 				55E5E729167B936900B6D163 /* BaseViewController */,
 				55FF0BD31677AC1200F8F0B0 /* UserModel */,
 				55FF0BA81677A30F00F8F0B0 /* Extensions */,
 				55E109681676FFA4005D8F6D /* Network */,
 				551324B41667C30C005B7BAA /* DataModel */,
 				55D96902165BCE6100180C15 /* External */,
-				55D968DA165BCA0F00180C15 /* AppDelegate.h */,
-				55D968DB165BCA0F00180C15 /* AppDelegate.m */,
+				55167F55167DA20600033CA7 /* Stat */,
+				55167F54167DA1D700033CA7 /* Tag */,
 				55F371A3166E4384005E9D51 /* Home */,
-				551324C41667D27A005B7BAA /* GTTextFieldViewController.h */,
-				551324C51667D27A005B7BAA /* GTTextFieldViewController.m */,
 				55F371A4166E4390005E9D51 /* Bundle */,
-				551324B51667C33F005B7BAA /* DETagListViewController.h */,
-				551324B61667C340005B7BAA /* DETagListViewController.m */,
 				55F371A5166E43B3005E9D51 /* Post */,
-				55F3719C166E3461005E9D51 /* DEStatViewController.h */,
-				55F3719D166E3461005E9D51 /* DEStatViewController.m */,
 				55D968D2165BCA0F00180C15 /* Supporting Files */,
-				55F371A6166E55D5005E9D51 /* DEServiceAPI.h */,
-				55F371A7166E55D6005E9D51 /* DEServiceAPI.m */,
 			);
 			path = iDilicious_ASI;
 			sourceTree = "<group>";
@@ -589,6 +606,8 @@
 		55FF0BD31677AC1200F8F0B0 /* UserModel */ = {
 			isa = PBXGroup;
 			children = (
+				55263A341668F5B900E808CC /* DEUserHelper.h */,
+				55263A351668F5B900E808CC /* DEUserHelper.m */,
 				55FF0BD41677AC6A00F8F0B0 /* DEAccount.h */,
 				55FF0BD51677AC6A00F8F0B0 /* DEAccount.m */,
 			);
@@ -677,6 +696,7 @@
 				551324E41667DE24005B7BAA /* whiteArrow.png in Resources */,
 				551324E51667DE24005B7BAA /* whiteArrow@2x.png in Resources */,
 				55024C3C167D1FD900C6846A /* SVWebViewController.bundle in Resources */,
+				55167F5A167DA22D00033CA7 /* FGLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +754,6 @@
 				55263A401669171F00E808CC /* DEParser.m in Sources */,
 				55032241166C7F8B00354544 /* DEStat.m in Sources */,
 				55F3719E166E3461005E9D51 /* DEStatViewController.m in Sources */,
-				55F371A8166E55D7005E9D51 /* DEServiceAPI.m in Sources */,
 				55E1096B1676FFFA005D8F6D /* DEDeliciousEngine.m in Sources */,
 				55FF0BB51677A30F00F8F0B0 /* NSDate+Nibware.m in Sources */,
 				55FF0BB61677A30F00F8F0B0 /* NSDictionary+Extensions.m in Sources */,
@@ -755,6 +774,7 @@
 				55024C3B167D1FD900C6846A /* SVModalWebViewController.m in Sources */,
 				55024C3D167D1FD900C6846A /* SVWebViewController.m in Sources */,
 				55024C42167D21C700C6846A /* PropertyUtil.m in Sources */,
+				55167F59167DA22D00033CA7 /* FGLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
