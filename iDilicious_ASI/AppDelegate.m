@@ -8,17 +8,9 @@
 
 #import "AppDelegate.h"
 
-#import "ASIHTTPRequest.h"
-
-#import "TouchXML.h"
-
 #import "DEHomeViewController.h"
 
-#import "ASIFormDataRequest.h"
-
 #import "DEAccount.h"
-
-#import <OHAttributedLabel/OHAttributedLabel.h>
 
 @implementation AppDelegate
 
@@ -31,39 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [DEAccount saveName:@"xiewenwei" andPwd:@"focusspeed1204"];
+    [DEAccount registerAllDefaults];
 //    NSString *version = [[[NSBundle mainBundle] infoDictionary]
 //                         objectForKey:@"CFBundleVersion"];
 //    NSLog(@"%@",version);
-    
-//    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"https://xiewenwei:focusspeed1204@api.del.icio.us/v1/tags/bundles/all"]];
-//    [request setDelegate:self];
-//    [request startAsynchronous];
-
-//    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://www.scjj.gov.cn:8635/view.aspx"]];
-//	[request setPostValue:@"510113199310258049" forKey:@"jxname"];
-//	[request setPostValue:@"DSHJPD" forKey:@"jxpwd"];
-//    //[request setPostValue:@"46" forKey:@"jxlogin.x"];
-//	//[request setPostValue:@"11" forKey:@"jxlogin.y"];
-//	//[request setPostValue:@"on" forKey:@"rkxz"];
-//    //[request setPostValue:@"213" forKey:@"jxyzm"];
-//	[request setDelegate:self];
-//	[request startAsynchronous];
-
-//    NSDictionary *properties = [[[NSMutableDictionary alloc] init] autorelease];
-//    [properties setValue:@"Test Value" forKey:NSHTTPCookieValue];
-//    [properties setValue:@"ASIHTTPRequestTestCookie" forKey:NSHTTPCookieName];
-//    [properties setValue:@".allseeing-i.com" forKey:NSHTTPCookieDomain];
-//    [properties setValue:[NSDate dateWithTimeIntervalSinceNow:60*60] forKey:NSHTTPCookieExpires];
-//    [properties setValue:@"/asi-http-request/tests" forKey:NSHTTPCookiePath];
-//    NSHTTPCookie *cookie = [[[NSHTTPCookie alloc] initWithProperties:properties] autorelease];
-
-    
-//    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://www.scjj.gov.cn:8635/login.aspx"]];
-//    [request setUseSessionPersistence:YES];
-//    [request setRequestCookies:[NSMutableArray arrayWithObject:cookie]];
-//	[request setDelegate:self];
-//	[request startAsynchronous];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
@@ -74,20 +37,6 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
-
-- (void)requestFinished:(ASIHTTPRequest *)re
-{
-    //NSLog(@"%@",re.responseCookies);
-    UIImage *img = [UIImage imageWithData:re.responseData];
-    NSLog(@"%@",img);
-        
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://www.scjj.gov.cn:8635/indexBitmap.aspx"]];
-    //[request setUseSessionPersistence:YES];
-    //[request setRequestCookies:re.responseCookies];
-	[request setDelegate:self];
-	[request startAsynchronous];
-}
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
