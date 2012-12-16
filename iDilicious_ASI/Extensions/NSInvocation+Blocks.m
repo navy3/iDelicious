@@ -32,6 +32,7 @@
 - (void)dealloc {
     self.target = nil;
     self.invocation = nil;
+    [super dealloc];
 }
 @end
 
