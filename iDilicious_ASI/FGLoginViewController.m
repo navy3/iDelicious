@@ -55,8 +55,8 @@
 //	[footerView addSubview:regBtn];
 //	[_tableView setTableFooterView:footerView];
 //	[footerView release];
-	
-	[nameField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.3];
+	[nameField becomeFirstResponder];
+	//[nameField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.3];
 }
 
 #pragma mark -
