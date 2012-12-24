@@ -30,8 +30,15 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.tableView.allowsSelectionDuringEditing = YES;
+
     }
     return self;
+}
+
+- (id)init
+{
+    return [self initWithStyle:UITableViewStylePlain];
 }
 
 - (void)dealloc
@@ -233,10 +240,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        //if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.editingAccessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-        }
+        //}
     }
     
     // Configure the cell...
@@ -306,14 +313,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DEBundle *object = self.dataArray[indexPath.row];
-    //NSArray *arr = [object.tags componentsSeparatedByString:@" "];
-    
-    DEPostListViewController *post = [[DEPostListViewController alloc] init];
-    [self.navigationController pushViewController:post animated:YES];
-    post.title = object.bundle;
-    [post loadMutableTags:object.tags];
-    [post release];
+    if (self.tableView.isEditing) {
+        DEBundle *object = self.dataArray[indexPath.row];
+        DEBundleEditorViewController *editor = [[DEBundleEditorViewController alloc] init];
+        editor.title = @"Editor Bundle";
+        editor.delegate = self;
+        [self.navigationController pushViewController:editor animated:YES];
+        [editor loadWithName:object.bundle andTags:object.tags];
+        [editor release];
+    }
+    else {
+        DEBundle *object = self.dataArray[indexPath.row];
+        //NSArray *arr = [object.tags componentsSeparatedByString:@" "];
+        
+        DEPostListViewController *post = [[DEPostListViewController alloc] init];
+        [self.navigationController pushViewController:post animated:YES];
+        post.title = object.bundle;
+        [post loadMutableTags:object.tags];
+        [post release];
+    }
 }
 
 @end

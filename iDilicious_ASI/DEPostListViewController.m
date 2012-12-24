@@ -287,12 +287,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        //if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.editingAccessoryType = UITableViewCellAccessoryDetailDisclosureButton;
             cell.textLabel.numberOfLines = 2;
             cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
-        }
+        //}
     }
     
     if (postType == DEPost_Single) {

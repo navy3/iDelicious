@@ -32,8 +32,15 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.tableView.allowsSelectionDuringEditing = YES;
+
     }
     return self;
+}
+
+- (id)init
+{
+    return [self initWithStyle:UITableViewStylePlain];
 }
 
 - (void)dealloc
@@ -107,6 +114,8 @@
     [super viewDidLoad];
     
     self.title = @"Tags";
+    self.tableView.allowsSelectionDuringEditing = YES;
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -244,10 +253,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        //if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.editingAccessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-        }
+        //}
     }
     
     // Configure the cell...
@@ -321,13 +330,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DEPostListViewController *post = [[DEPostListViewController alloc] init];
-    DETag *object = self.dataArray[indexPath.row];
-    post.title = object.tag;
-    [self.navigationController pushViewController:post animated:YES];
-    [post showStatBar];
-    [post loadPostByType:object.tag];
-    [post release];
+    if (self.tableView.isEditing) {
+        selectedIndex = indexPath.row;
+        self.deTag = self.dataArray[selectedIndex];
+        
+        GTTextFieldViewController *tf = [[GTTextFieldViewController alloc] init];
+        [tf groupName:self.deTag.tag];
+        tf.delegate = self;
+        [self.navigationController pushViewController:tf animated:YES];
+        [tf release];
+    }
+    else {
+        DEPostListViewController *post = [[DEPostListViewController alloc] init];
+        DETag *object = self.dataArray[indexPath.row];
+        post.title = object.tag;
+        [self.navigationController pushViewController:post animated:YES];
+        [post showStatBar];
+        [post loadPostByType:object.tag];
+        [post release];
+    }
 }
 
 @end

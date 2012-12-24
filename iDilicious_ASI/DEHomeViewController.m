@@ -11,6 +11,7 @@
 #import "DETagListViewController.h"
 #import "FGLoginViewController.h"
 #import "DEAccount.h"
+#import "DEAddPostViewController.h"
 
 @interface DEHomeViewController ()
 
@@ -49,6 +50,11 @@
     return self;
 }
 
+- (id)init
+{
+    return [self initWithStyle:UITableViewStyleGrouped];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -65,6 +71,17 @@
         [alert show];
         [alert release];
     }
+    
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction:)];
+	self.navigationItem.rightBarButtonItem = rightBtn;
+	[rightBtn release];
+}
+
+- (void)addAction:(id)sender
+{
+    DEAddPostViewController *add = [[DEAddPostViewController alloc] init];
+    [self.navigationController pushViewController:add animated:YES];
+    [add release];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -115,12 +132,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.editingAccessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.editingAccessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+
     }
-    
+
     if (0 == indexPath.section) {
         cell.textLabel.text = @"All Bookmarked";
     }

@@ -30,7 +30,7 @@
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    DEHomeViewController *masterViewController = [[[DEHomeViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+    DEHomeViewController *masterViewController = [[[DEHomeViewController alloc] init] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
     self.window.rootViewController = self.navigationController;
 
