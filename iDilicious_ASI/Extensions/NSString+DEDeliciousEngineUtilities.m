@@ -10,9 +10,9 @@
 
 @implementation NSString (NSString_DeliciousEngineUtilities)
 
-- (NSDate *)dateFromGithubDateString {
+- (NSDate *)dateFromDeliciousDateString {
 	
-	NSDateFormatter *df = [[NSDateFormatter alloc] init];
+	NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
 	NSString *dateString = self;
     
     if (![[self substringWithRange:NSMakeRange([self length] - 1, 1)] isEqualToString:@"Z"])

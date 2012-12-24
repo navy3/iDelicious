@@ -10,7 +10,7 @@
 
 @interface NSString (DEDeliciousEngineUtilities)
 
-- (NSDate *)dateFromGithubDateString;
+- (NSDate *)dateFromDeliciousDateString;
 - (NSString *)encodedString;
 
 @end
